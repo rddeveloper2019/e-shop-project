@@ -3,10 +3,65 @@
 @import 'reset';
 @import 'global';
 
-body {
-  background-color: $pnk;
+.header {
+  padding: 40px 0;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
+.menu {
+  &__list {
+    display: flex;
+  }
+  &__list-item + .menu__list-item {
+    padding-left: 33px;
+  }
+  &__list-link {
+    color: $title;
+    text-transform: uppercase;
+    padding: 2px;
+    transition: all 0.3s;
+    @extend %quicksand-400;
+    &:hover {
+      @extend %quicksand-500;
+      color: $accent;
+      border-bottom: 2px solid $accent;
+    }
+  }
+
+  &__list-link--active {
+    color: $accent;
+    @extend %quicksand-500;
+    border-bottom: 2px solid $accent;
+  }
+}
+
+.user-nav {
+  display: flex;
+  &__link {
+    position: relative;
+  }
+  &__link-num {
+    position: absolute;
+    top: -9px;
+    right: -14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+
+    text-align: center;
+  }
+  &__link + .user-nav__link {
+    padding-left: 25px;
+  }
+}
 //
 
 //
